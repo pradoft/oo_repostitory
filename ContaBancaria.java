@@ -52,7 +52,7 @@ public class ContaBancaria{
 
 
     public String toString(){
-        return "\n - Agência: "+ agencia +
+        return "\n\n - Agência: "+ agencia +
         "\n - Número: " + numero +
         "\n - Cliente: " + cliente +
         "\n - Saldo: R$" + saldo;

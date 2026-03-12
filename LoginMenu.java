@@ -132,6 +132,8 @@ public class LoginMenu {
                 System.out.printf("\n\nERRO: Digitou um opção invalida!");
             }
         }
+        System.out.println("Até mais!");
         Escanear.close();
+        
     }
 }
