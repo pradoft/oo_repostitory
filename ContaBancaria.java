@@ -3,80 +3,58 @@ public class ContaBancaria{
     private int agencia;
     private double saldo;
     private String cliente;
-
-    // construtor
+   
     public ContaBancaria(int agencia, int numero, String cliente, double saldo){
-        this.numero = numero;
         this.agencia = agencia;
+        this.numero = numero;
         this.cliente = cliente;
         this.saldo = saldo;
     }
-
-    public ContaBancaria(int agencia, int numero){
-        this.agencia = agencia;
-        this.numero = numero;
-        this.saldo = 0;
-        this.cliente = "Não informado";
-    }
-    public double version(){
-        return saldo;
-    }
-
-    public void sacar(double valor){
-        saldo = saldo - valor;
-    }
-
-    public void sacar(){
-        saldo = saldo - 100.0;
-    }
-
-    public void depositar(double valor){
-        saldo = saldo + valor;
-    }
-
-    // get e set
-    public String getCliente(){
-        return cliente;
-    }
-
+   
     public void setCliente(String cliente){
         this.cliente = cliente;
-    }
-
-    public double getSaldo(){
-        return saldo;
     }
 
     public void setSaldo(double saldo){
         this.saldo = saldo;
     }
 
-    public int getNumero(){
-        return numero;
-    }
-
     public void setNumero(int numero){
         this.numero = numero;
     }
 
-    public int getAgencia(){
-        return agencia;
-    }
-
-    public void setAgencia(int agencia)
+    public void setAgencia(int NovaAgencia)
     {
-        this.agencia = agencia;
+        this.agencia = NovaAgencia;
     }
-    //metodos gerais
+    public double getSaldo()
+    {
+        return saldo;
+    }    // toString
+   
+    public void depositar(double valor) {
+        saldo = saldo + valor;
+    }
+   
+    public void depositar(double valor, double taxa) {
+        saldo = saldo + valor - taxa;
+    }
 
-    // toString
+    public void saque(double saque)
+    {
+        saldo = saldo - saque;
+    }
+    public void saque(double saque, int antecipacao)
+    {
+        saldo = saldo - (saque + (saque + antecipacao * 0.10));
+    }
 
 
 
     public String toString(){
-        return "\nAgência: "+ agencia +
-        "\nNúmero: " + numero +
-        "\nCliente: " + cliente +
-        "\nSaldo: R$" + saldo;
+        return "\n - Agência: "+ agencia +
+        "\n - Número: " + numero +
+        "\n - Cliente: " + cliente +
+        "\n - Saldo: R$" + saldo;
         }
 }
